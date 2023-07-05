@@ -56,30 +56,32 @@ const Weather = () => {
     }
   };
   return (
-    <div className='globaldiv'>
-        <div className='leftdiv'>
-          <h3>{weather.name}, {weather.sys?.country}</h3>
-            <div className='bg-leftdiv'>
-                <img src={`https://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" />
-                <p><strong>Weather conditions:</strong> {weather.weather?.[0].description}</p>
-                <p><strong>Temperature:</strong> {weather.main?.temp} {isBoolean ? '°F' : '°C'}</p>
-            </div>
-            <div className='bg-button'>
-                <button className='button' onClick={() => { degreesF(); changeDegrees(); }} disabled={isBoolean? true : false} >Imperial °F, mph</button>
-                <button className='button' onClick={() => { degreesC(); changeDegrees(); }} disabled={isBoolean? false : true}>Metric °C, m/s</button>
-        </div>
-        </div>
-        <div className='rigthleft'>
-            <h2>Weather App</h2>
-            <p><strong>Feels like:</strong> {weather.main?.feels_like} {isBoolean ? '°F' : '°C'}</p>
-            <p><strong>Temperature MAX:</strong> {weather.main?.temp_max} {isBoolean ? '°F' : '°C'}</p>
-            <p><strong>Temperature MIN:</strong> {weather.main?.temp_min} {isBoolean ? '°F' : '°C'}</p>
-            <p><strong>Wind speed:</strong> {weather.wind?.speed} {isBoolean ? 'miles/hour' : 'meter/sec'}</p>
-            <p><strong>Clouds:</strong> {weather.clouds?.all} %</p>
-            <p><strong>Pressure:</strong> {weather.main?.pressure} hPa</p>
-        </div>
-
+    <section className='global-card'>
+    <div className='main-card'>
+    <div className='main-card_info'>
+      <div className='main-card_temp'>
+        <p className='main-card_p'>{weather.main?.temp} {isBoolean ? '°F' : '°C'}</p>
+        <p><strong>Feels like:</strong> {weather.main?.feels_like} {isBoolean ? '°F' : '°C'}</p>
+        <p><strong>Temperature MAX:</strong> {weather.main?.temp_max} {isBoolean ? '°F' : '°C'}</p>
+        <p><strong>Temperature MIN:</strong> {weather.main?.temp_min} {isBoolean ? '°F' : '°C'}</p>
+        <p><strong>Wind speed:</strong> {weather.wind?.speed} {isBoolean ? 'miles/hour' : 'meter/sec'}</p>
+        <p><strong>Clouds:</strong> {weather.clouds?.all} %</p>
+        <p><strong>Pressure:</strong> {weather.main?.pressure} hPa</p>
+      </div>
+      <div className='main-card-img'>
+        <img src={`https://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" />
+      </div>
     </div>
+    <div className='main-location'>
+      <h3>{weather.name}, {weather.sys?.country}</h3>
+      <p>{weather.weather?.[0].description}</p>
+    </div>
+  </div>
+  <div className='bg-button'>
+    <button className='button' onClick={() => { degreesF(); changeDegrees(); }} disabled={isBoolean? true : false} >°F, mph</button>
+    <button className='button' onClick={() => { degreesC(); changeDegrees(); }} disabled={isBoolean? false : true}>°C, m/s</button>
+  </div>
+  </section>
   )
 }
 
