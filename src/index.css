@@ -1,105 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body {
-    background-color: skyblue;
-    
-}
-:root {
-    --canva: rgb(255,77,96);
-    --light: #d8dbe0;
-    --dark: #28292c;
-    --link: rgb(27, 129, 112);
-    --link-hover: rgb(24, 94, 82);
-}
-/* nav */
-nav {
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-/* img */
-.img-logo {
-    height: 150px;
-} 
-/* search */
-.search-climate {
-    display: flex;
-    align-items: flex-end;
-}
-.search-climate_tracker {
-   width: 300px;
-   border: transparent;
-   background-color: transparent;
-   border-bottom: solid 1px #2d0de4;
-   padding: 10px 10px 10px 30px;
-   outline: none;
-}
-.search-climate button {
-    background-color: transparent;
-    border: none;
-    margin-left: 10px;
-}
-.fa-searchengin {
-    cursor: pointer;
-    font-size: 30px;
-    background-color: transparent;
-    color: white;
-}
-
-/* switch */
-
-.toggle-switch {
-    position: relative;
-    width: 100px;
-    right: 2rem; 
-    bottom: 1.5rem;
-}
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   
-label {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    background-color: var(--dark);
-    border-radius: 50px;
-    cursor: pointer;
-}
-  
-.toggle-switch_input {
-    position: absolute;
-    display: none;
-}
-  
-.slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    transition: 0.3s;
-}
-  
-input:checked ~ .slider {
-    background-color: var(--light);
-}
-  
-.slider::before {
-    content: "";
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    box-shadow: inset 14px -4px 0px 0px var(--light);
-    background-color: var(--dark);
-    transition: 0.3s;
-}
-  
-input:checked ~ .slider::before {
-    transform: translateX(36px);
-    background-color: var(--dark);
-    box-shadow: none;
-}
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
